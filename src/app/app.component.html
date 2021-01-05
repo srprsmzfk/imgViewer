@@ -1,0 +1,29 @@
+<div class="container">
+  <header><h1>IMG Viewer</h1></header>
+  <main>
+    <section class="grid">
+      <app-grid-cell
+        *ngFor="let picture of pictures.pictures; index as i"
+        [src]="picture.cropped_picture"
+        [id]="picture.id"
+        (click)="openModal(picture.id, i)">
+      </app-grid-cell>
+    </section>
+  </main>
+  <footer>
+    <div class="pagination">
+      <button [disabled]="pictures.page == 1" (click)="changePage(-1)">◄</button>
+      <span>{{pictures.page}}</span>
+      <button [disabled]="!pictures.hasMore" (click)="changePage(1)">►</button>
+    </div>
+  </footer>
+</div>
+
+<app-full-size-img
+  *ngIf="modalOpen"
+  [picture]="picture"
+  [index]="currentPictureIndex"
+  (click)="closeModal()"
+  (pictureChange)="changePicture($event)">
+</app-full-size-img>
+

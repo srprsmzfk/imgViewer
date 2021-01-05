@@ -1,0 +1,106 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    color: white;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+
+    &:disabled {
+      color: grey;
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+
+  .zoom {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 10px;
+      font-size: 50px;
+    }
+  }
+
+  .actions {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      margin: 10px;
+      font-size: 30px;
+
+      &.copy {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    width: 100%;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+
+    .info {
+      position: fixed;
+      bottom: 80px;
+      color: white;
+      font-size: 20px;
+      width: 70%;
+      opacity: 0.3;
+      border-radius: 40px;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      p {
+        text-align: center;
+
+        &.hashtag {
+          color: #0066ff;
+        }
+      }
+    }
+
+    .img-container {
+      height: 90%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

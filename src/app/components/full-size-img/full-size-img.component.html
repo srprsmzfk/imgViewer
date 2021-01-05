@@ -1,0 +1,22 @@
+<div class="actions">
+  <button class="copy" (click)="shareURL($event)">Copy URL 🔗</button>
+  <button>✖</button>
+</div>
+<div class="navigation">
+  <button (click)="changePicture($event, -1)" [disabled]="index == 0">◄</button>
+  <div class="container" (click)="$event.stopPropagation()">
+    <div class="img-container">
+      <img #mainImg [src]="picture.full_picture">
+    </div>
+    <div class="info">
+      <p>{{picture.author}}</p>
+      <p>{{picture.camera}}</p>
+      <p class="hashtag">{{picture.tags}}</p>
+    </div>
+  </div>
+  <button (click)="changePicture($event, 1)" [disabled]="index == pageSize - 1">►</button>
+</div>
+<div class="zoom">
+  <button (click)="changeZoom($event, -20)">-</button>
+  <button (click)="changeZoom($event, 20)">+</button>
+</div>
