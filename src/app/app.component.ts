@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ImgService } from './services/img/img.service';
 import { FullSizePicture, PictureResponse } from './app.model';
 
-const PAGE_SIZE = 13;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

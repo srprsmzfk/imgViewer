@@ -3,7 +3,7 @@
   <main>
     <section class="grid">
       <app-grid-cell
-        *ngFor="let picture of pictures.pictures; index as i"
+        *ngFor="let picture of pictures?.pictures; index as i"
         [src]="picture.cropped_picture"
         [id]="picture.id"
         (click)="openModal(picture.id, i)">
@@ -12,9 +12,9 @@
   </main>
   <footer>
     <div class="pagination">
-      <button [disabled]="pictures.page == 1" (click)="changePage(-1)">◄</button>
-      <span>{{pictures.page}}</span>
-      <button [disabled]="!pictures.hasMore" (click)="changePage(1)">►</button>
+      <button [disabled]="pictures?.page == 1" (click)="changePage(-1)">◄</button>
+      <span>{{pictures?.page}}</span>
+      <button [disabled]="!pictures?.hasMore" (click)="changePage(1)">►</button>
     </div>
   </footer>
 </div>
